@@ -9,29 +9,29 @@ Agentic Memories enables truly persistent conversational experiences with AI Age
 ```mermaid
 flowchart TD
     User((User)) -->|Types message| App[AI Agents Chat App]
-    
+
     subgraph "App Experience"
         App -->|Sends user message| AI[AI Character]
         AI -->|Responds as character| App
         App -->|Displays conversation| User
     end
-    
+
     subgraph "Behind the Scenes"
         App -.->|Saves conversations| Storage{{"Secure Storage"}}
         Storage -->|"Loads history\nwhen returning"| App
     end
-    
+
     subgraph "AI Processing"
         AI -.->|Character personality| Brain["OpenAI\nLarge Language Model"]
         Brain -->|"Creates in-character\nresponses"| AI
     end
-    
+
     classDef user fill:#FFD700,stroke:#333,stroke-width:2px;
     classDef app fill:#61dafb,stroke:#333,stroke-width:2px;
     classDef ai fill:#8884d8,stroke:#333,stroke-width:2px;
     classDef storage fill:#ff6b6b,stroke:#333,stroke-width:2px;
     classDef brain fill:#00C49F,stroke:#333,stroke-width:2px;
-    
+
     class User user;
     class App app;
     class AI ai;
@@ -39,6 +39,11 @@ flowchart TD
     class Brain brain;
 ```
 
+## AWE Alignment
+
+This implementation aligns with AWE's Proof of Autonomy module by providing:
+
+- Decentralized Storage: Using Nillion's encrypted vaults
 
 ## Features
 
@@ -69,4 +74,3 @@ Frontend
 - `cd dapp`
 - `pnpm install`
 - start dapp `pnpm run dev`
-
